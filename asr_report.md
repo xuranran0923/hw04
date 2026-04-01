@@ -39,13 +39,13 @@ from vosk import Model, KaldiRecognizer
 import json
 import os
 
-# ===================== 配置 =====================
+
 # 任务二导出的配音音频路径
 AUDIO_FILE = "jianying_voice.wav"
 # 识别结果保存路径
 RESULT_FILE = "asr_result.txt"
 
-# ===================== 模型加载 =====================
+
 print("正在加载Vosk中文轻量模型...")
 model = Model("model")
 rec = KaldiRecognizer(model, 16000)
@@ -75,6 +75,8 @@ except FileNotFoundError:
     print(f"\n❌ 错误：未找到音频文件 {AUDIO_FILE}，请确认文件路径正确！")
 except Exception as e:
     print(f"\n❌ 识别过程出现错误：{str(e)}")
+
+
 2. 依赖说明：requirements.txt
 txt
 vosk==0.3.45
